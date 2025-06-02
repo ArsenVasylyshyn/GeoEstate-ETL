@@ -279,8 +279,6 @@ def convert_data_types(**kwargs):
     df.write.parquet("/opt/airflow/shared/valid_data_types.parquet", mode="overwrite") 
 
     print("📊 Valid DataFrame Columns and Types:")
-    # for name, dtype in df.dtypes:
-    #     print(f"⚡️ {name:<20} | {dtype}")
 
     df.printSchema()    
 

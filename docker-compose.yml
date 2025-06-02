@@ -20,7 +20,7 @@ x-airflow-common: &airflow-common
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-    - ${AIRFLOW_PROJ_DIR:-.}/data:/opt/airflow/data # 👈 ADD
+    - ${AIRFLOW_PROJ_DIR:-.}/data:/opt/airflow/data
   user: '${AIRFLOW_UID:-50000}:0'
   depends_on: &airflow-common-depends-on
     redis:
@@ -252,30 +252,6 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
-
-  # spark:
-  #   image: bitnami/spark:3.3.2
-  #   container_name: spark
-  #   environment:
-  #     - SPARK_MODE=master
-  #   ports:
-  #     - '7077:7077'
-  #     - '8081:8080'
-  #   volumes:
-  #     - ./spark-app:/opt/spark-app
-  #   networks:
-  #     - default
-
-  # spark-worker:
-  #   image: bitnami/spark:3.3.2
-  #   container_name: spark-worker
-  #   environment:
-  #     - SPARK_MODE=worker
-  #     - SPARK_MASTER_URL=spark://spark:7077
-  #   depends_on:
-  #     - spark
-  #   networks:
-  #     - default
 
 networks:
   default:
