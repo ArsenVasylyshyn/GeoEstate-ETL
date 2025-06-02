@@ -1,0 +1,19 @@
+<clickhouse>
+  <!-- Docs: <https://clickhouse.com/docs/operations/settings/settings_users/> -->
+  <users>
+    <default>
+      <!-- User default is available only locally -->
+      <networks>
+        <ip>0.0.0.0/0</ip> 
+        <ip>::/0</ip>
+      </networks>
+    </default>
+  </users>
+</clickhouse>
+
+
+<!-- <default> — this is the default ClickHouse user that is created automatically. -->
+<!-- <password></password> — the password for the user is empty (none). Login without a password. -->
+<!-- <networks> — specifies from which IP addresses the user is allowed to connect. -->
+<!-- <ip>0.0.0.0/0</ip> — this means “allow connections from any IPv4 address.” -->
+<!-- <ip>::/0</ip> — this means “allow connections from any IPv6 address.” -->
