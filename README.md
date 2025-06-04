@@ -139,3 +139,4 @@ docker-compose up -d
 Вы можете найти другие проекты и полезные ресурсы в репозитории GitHub:
 
 [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ArsenVasylyshyn)
+Почта для связи: arsenv92@gmail.com
